@@ -24,7 +24,8 @@ public class ConsoleScanner {
         }while(!flag);
         return 0;
     }
-//заданным году и номеру месяца определяет количество дней в этом месяце и корректно определялись все високосные года.
+
+    
     public static Date entryDateValidation(){
         final  String DATE_FORMAT = "MM-yyyy";
         boolean flag = true;
