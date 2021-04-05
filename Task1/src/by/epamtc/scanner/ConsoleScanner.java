@@ -25,7 +25,7 @@ public class ConsoleScanner {
         return 0;
     }
 
-    
+
     public static Date entryDateValidation(){
         final  String DATE_FORMAT = "MM-yyyy";
         boolean flag = true;
