@@ -5,33 +5,28 @@ import java.util.List;
 import by.epamtc.arrayshell.pojos.Array;
 
 public class ArrayShell {
-	 protected Array arrShell;
-	 int[] sortedArr;
+	 protected Array castomAarray;
 
-
-	public ArrayShell(Array array) {
-		this.arrShell = array;
+	 
+	public ArrayShell(Array cArray) {
+		this.castomAarray = cArray;
+	}
+	
+	public ArrayShell(int[] array) {
+		this.castomAarray = new Array(array);
 	}
 	
 	public ArrayShell(List<Integer> listEntities) {
-		this.arrShell = new Array(listEntities);
+		this.castomAarray = new Array(listEntities);
 	}
 	
-	
-	public int[] getArrayShell() {
-		return arrShell.getArray();
-	}
-
-	public void setArr(Array arr) {
-		this.arrShell = arr;
-	}
 
 	/**
 	 * Get values(int) which are contain in array 
 	 * @return String, all numbers are in array
 	 */
 	public String values() {
-	    return this.arrShell.toString();
+	    return this.castomAarray.toString();
 	}
 	
 	/**
@@ -39,7 +34,7 @@ public class ArrayShell {
 	 * @return int, size of array
 	 */
 	public int size() {
-	    return arrShell.getSize();
+	    return castomAarray.getSize();
 	}
 
 	/**
@@ -47,7 +42,7 @@ public class ArrayShell {
 	 * @return boolean, false if array contains at least one element
 	 */	
     public boolean isEmpty() {
-        return arrShell.getSize() == 0;
+        return castomAarray.getSize() == 0;
     }
     
     /**
@@ -55,10 +50,10 @@ public class ArrayShell {
 	 * @return int, value
 	 */	
     public int maxValue() {
-    	int max = getArrayShell()[0];
+    	int max = castomAarray.get(0);
     	 for(int i=1; i<size(); i++){ 
-    		 if(getArrayShell()[i] > max){ 
-             max = getArrayShell()[i]; 
+    		 if(castomAarray.get(i) > max){ 
+             max = castomAarray.get(i); 
           } 
         } 
         return max; 
@@ -69,90 +64,76 @@ public class ArrayShell {
 	 * @return int, value
 	 */	
     public int minValue() {
-		int min = getArrayShell()[0];
+		int min = castomAarray.get(0);
 		 for(int i=1; i<size(); i++){ 
-			 if(getArrayShell()[i] < min){ 
-		        min = getArrayShell()[i]; 
+			 if(castomAarray.get(i) < min){ 
+		        min = castomAarray.get(i); 
 		     } 
 		   } 
 	    return min; 
     }
     
     public int searchElement(int index) {
-    	return getArrayShell()[index];
+    	return castomAarray.get(index);
     }
  
-    
-    public String printSortedBySelection(){    
-    	sortBySelection();
-    	return arrShell.toString();    	
-    }
     
     /**
      * Select minimal element in array and move it to start. Each next iteration will be started form next element;  
      * @return String, values in sorted array
      */
-    public int[] sortBySelection(){
-    	sortedArr = getArrayShell();
-		for (int i = 0; i < size(); i++) {
-		    int min = sortedArr[i];  //first element will be as minimal
+    public static void sortBySelection(Array cArray){
+		for (int i = 0; i < cArray.getSize(); i++) {
+		    int min = cArray.get(i);  //first element will be as minimal
 		    int min_i = i; 
-		    for (int j = i+1; j < size(); j++) {  //try to find less of minimal element, and if is remember it
-			    if (sortedArr[j] < min) {
-			        min = sortedArr[j];
+		    for (int j = i+1; j < cArray.getSize(); j++) {  //try to find less of minimal element, and if is remember it
+			    if (cArray.get(j) < min) {
+			        min = cArray.get(j);
 			        min_i = j;
 			    }
 		    }		
 			if (i != min_i) {       //move places for minimal elements
-				swap(sortedArr, i, min_i);				
+				swap(cArray, i, min_i);				
 			}
 		}
-	return sortedArr;
     }
     
     
     /**
      * Compare the elements in pairs, if they are in the wrong order, then swap them;  
-     * @return String, values in sorted array
      */
-    public String sortByBubble(){        
-    	sortedArr = getArrayShell();
-		for(int i = size()-1 ; i > 0 ; i--){
+    public static void sortByBubble(Array cArray){        
+		for(int i = cArray.getSize()-1 ; i > 0 ; i--){
 			for(int j = 0 ; j < i ; j++){
-				if(sortedArr[j] > sortedArr[j+1] ){
-					swap(sortedArr, j, j+1);	
+				if(cArray.get(j) > cArray.get(j+1)){
+					swap(cArray, j, j+1);	
 				}
 			}
 		}
-    return arrShell.toString();
     }
     
     /**
      * Select minimal element in array, but each iteration we have a different gap between the compared elements;  
-     * @return String, values in sorted array
      */
-    public String sortByShella() {
-    	sortedArr = getArrayShell();
-    	
-    	int gap = size() / 2;
+    public static void sortByShella(Array cArray) {
+    	int gap = cArray.getSize() / 2;
     	while (gap >= 1) {  		//while diff between elements is
-    	    for (int right = 0; right < size(); right++) {
+    	    for (int right = 0; right < cArray.getSize(); right++) {
     	       for (int i = right - gap; i >= 0; i -= gap) {
-    	           if (sortedArr[i] > sortedArr[i + gap]) {
-    	               swap(sortedArr, i, i + gap);
+    	           if (cArray.get(i) > cArray.get(i + gap)) {
+    	               swap(cArray, i, i + gap);
     	           }
     	        }
     	    }
     	    gap = gap / 2;   //recalculate way
     	}
-    	return arrShell.toString();
     }
     
     
-    private void swap(int[] array, int ind1, int ind2) {
-        int tmp = array[ind1];
-        array[ind1] = array[ind2];
-        array[ind2] = tmp;
+    private static void swap(Array castomAarray, int ind1, int ind2) {
+        int tmp = castomAarray.get(ind1);
+        castomAarray.set(ind1, castomAarray.get(ind2));
+        castomAarray.set(ind2, tmp);
     }
     
 }

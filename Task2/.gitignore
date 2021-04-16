@@ -2,6 +2,5 @@
 .project
 .settings/
 .idea/
-Task2/Task2.iml
-Task2/.gitignore
-Task1/bin
+Task2.iml
+bin/

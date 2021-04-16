@@ -20,10 +20,17 @@ public class Array {
 		}
 	}
 
-	public int[] getArray() {
+	private int[] getArray() {
 		return this.array;
 	}
 
+	public int get(int index) {
+		return this.array[index];
+	}
+	
+	public void set(int index, int value) {
+		this.array[index] = value;
+	}
 
 	public int getSize() {
 		int size = getArray().length;
