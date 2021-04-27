@@ -1,4 +1,4 @@
-package by.epamtc.arrayshell.dataprovider;
+package lab1.by.epamtc.arrayshell.dataprovider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class NumberGeneration extends AbstractDataSourceInt {
 
 	 public List<Integer> entryIntValidation(){
-		 List<Integer> listInt = new ArrayList();
+		 List<Integer> listInt = new ArrayList<Integer>();
 		 do {
 			 int enteredNumber =  (int) ( Math.random() * 100 );
 			 listInt.add(enteredNumber);

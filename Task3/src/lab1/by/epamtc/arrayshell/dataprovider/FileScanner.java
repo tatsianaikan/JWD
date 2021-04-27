@@ -1,8 +1,7 @@
-package by.epamtc.arrayshell.dataprovider;
+package lab1.by.epamtc.arrayshell.dataprovider;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,7 +10,7 @@ public class FileScanner extends AbstractDataSourceInt {
 
 	 public List<Integer> entryIntValidation(){
 		File file = new File("./resources/numbers.txt");
-	 	List<Integer> listInt = new ArrayList();
+	 	List<Integer> listInt = new ArrayList<Integer>();
 	 	Scanner in = null;
         
         try {	

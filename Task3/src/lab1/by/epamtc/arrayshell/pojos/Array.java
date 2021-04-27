@@ -1,4 +1,4 @@
-package by.epamtc.arrayshell.pojos;
+package lab1.by.epamtc.arrayshell.pojos;
 
 import java.util.Arrays;
 import java.util.List;

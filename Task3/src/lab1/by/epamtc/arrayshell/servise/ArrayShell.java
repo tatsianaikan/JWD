@@ -1,8 +1,7 @@
-package by.epamtc.arrayshell.servise;
+package lab1.by.epamtc.arrayshell.servise;
 
 import java.util.List;
-
-import by.epamtc.arrayshell.pojos.Array;
+import lab1.by.epamtc.arrayshell.pojos.Array;
 
 public class ArrayShell {
 	 protected Array castomAarray;

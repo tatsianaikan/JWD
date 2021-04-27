@@ -1,15 +1,10 @@
-package by.epamtc.arrayshell.view;
+package lab1.by.epamtc.arrayshell.view;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
-
-import by.epamtc.arrayshell.dataprovider.ConsoleScanner;
-import by.epamtc.arrayshell.dataprovider.FileScanner;
-import by.epamtc.arrayshell.dataprovider.NumberGeneration;
-import by.epamtc.arrayshell.pojos.Array;
-import by.epamtc.arrayshell.servise.ArrayShell;
+import lab1.by.epamtc.arrayshell.dataprovider.ConsoleScanner;
+import lab1.by.epamtc.arrayshell.dataprovider.FileScanner;
+import lab1.by.epamtc.arrayshell.dataprovider.NumberGeneration;
+import lab1.by.epamtc.arrayshell.pojos.Array;
 
 public class SelectSource {
 

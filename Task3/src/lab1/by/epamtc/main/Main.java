@@ -1,8 +1,8 @@
-package by.epamtc.main;
+package lab1.by.epamtc.main;
 
-import by.epamtc.arrayshell.pojos.Array;
-import by.epamtc.arrayshell.servise.ArrayShell;
-import by.epamtc.arrayshell.view.SelectSource;
+import lab1.by.epamtc.arrayshell.pojos.Array;
+import lab1.by.epamtc.arrayshell.servise.ArrayShell;
+import lab1.by.epamtc.arrayshell.view.SelectSource;
 
 public class Main {
 

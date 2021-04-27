@@ -1,4 +1,4 @@
-package by.epamtc.arrayshell.dataprovider;
+package lab1.by.epamtc.arrayshell.dataprovider;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -9,7 +9,7 @@ public class ConsoleScanner extends AbstractDataSourceInt{
 
     public List<Integer> entryIntValidation() {
     	Scanner in = null;
-    	List<Integer> listInt = new ArrayList();
+    	List<Integer> listInt = new ArrayList<Integer>();
         boolean flag = false;
         
         System.out.println("Enter number. Enter 'exit' to stop entering");
