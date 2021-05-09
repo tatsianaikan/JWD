@@ -52,14 +52,20 @@ public class LogicProcessor {
 				return null;
 			}
 		}
-        //Write the list machines in the file
-        try {
-            AbstractDataSourse.writeInFile(mashinesForAirline);
-        } catch (IOException ex) {
-            System.out.println("Exception " + ex);
-            Logger.getLogger(LogicProcessor.class.getName()).log(Level.SEVERE, null, ex);
-        }      
+        
+		writeDataFile(mashinesForAirline);
+		
         return mashinesForAirline;
+	}
+	
+	//Write the list machines in the file
+	public void writeDataFile(ArrayList<Aviations> mashinesForAirline) {
+		 try {
+	            AbstractDataSourse.writeInFile(mashinesForAirline);
+	        } catch (IOException ex) {
+	            System.out.println("Exception " + ex);
+	            Logger.getLogger(LogicProcessor.class.getName()).log(Level.SEVERE, null, ex);
+	        }      
 	}
 	
 	// Returns the cheapest machine on the list
