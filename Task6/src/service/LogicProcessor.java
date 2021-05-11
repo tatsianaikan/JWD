@@ -84,7 +84,7 @@ public class LogicProcessor {
 	public Aviations getMinCostElement(List<Aviations> listMachines){
         Aviations cheapMachine = null;
         try{
-            if(!listMachines.isEmpty()){
+            if(!listMachines.isEmpty() && listMachines!=null){
             	cheapMachine = listMachines.get(0);
                 int minCost = cheapMachine.getCost();
                 for(Aviations mashine:listMachines){	
@@ -93,11 +93,9 @@ public class LogicProcessor {
                        cheapMachine = mashine;
                      }
                 }
-            } else{
-            	throw new ListSizeExeption();
             }
-        }catch (ListSizeExeption e){
-        	e.getMessage();
+        }catch (NullPointerException e){
+        	System.out.println("ERROR: List is empty. Can not display correct data");
         }
        return cheapMachine;
 	}
@@ -126,18 +124,20 @@ public class LogicProcessor {
 		return carrying;
 	}
     
-    // Get Quantity needed machines from the stock
-    public long getQuantityNeedMachines(long quantityNeedMachines){	
+    // Set Quantity needed machines from the stock
+    public long setQuantityNeedMachines(){	
 	    boolean flag;
+	    long quantityNeedMachines=LogicProcessor.testInt();
 		 	do{
 	    	 if(quantityNeedMachines > listOfAviations.size()){
 		            System.out.println("Not as many mashines  in stock! Try again");
 		            flag = false;
+		            quantityNeedMachines = LogicProcessor.testInt();
 		        }else {
 		            flag = true;
 		        }
 		    }while(!flag);     
-	    return quantityNeedMachines;
+		 return quantityNeedMachines;
     }
 	
 	 @SuppressWarnings("resource")
@@ -145,7 +145,7 @@ public class LogicProcessor {
          boolean flag = true;
          do{
              try{
-                  long enteredNumber = new Scanner(System.in).nextInt();
+                  long enteredNumber = new Scanner(System.in).nextLong();
 		          System.out.println("Ok");
                   return enteredNumber;
              }catch (InputMismatchException e) {

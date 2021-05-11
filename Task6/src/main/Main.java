@@ -28,8 +28,7 @@ public class Main {
 		// Requests to the quantity machines for Airline
 		System.out.println("-----------------------------------------");
 		System.out.println("How many machines are needed? ");
-		long quantityNeedMachines = LogicProcessor.testInt();
-		source.getQuantityNeedMachines(quantityNeedMachines);
+		long quantityNeedMachines = source.setQuantityNeedMachines();
 
 		System.out.println("Enter the amount of money which you have: ");
 		long money = LogicProcessor.testInt();
