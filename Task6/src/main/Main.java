@@ -16,17 +16,18 @@ public class Main {
 		LogicProcessor source = new LogicProcessor(new ViewProcessor().selectMenuData());
 
 		// Total machines in stock(for info)
-		System.out
-				.println("The machines in the stock: name, number of passengers, ranging, type, aircraft cost" + "\n");
-		System.out.println("\nIn total: " + source.totalMachinesInStock());
+		System.out.println("The machines in the stock: name, number of passengers, carrying, type, aircraft cost" + "\n");
+		System.out.println("\nTotal machines in the stock: " + source.totalMachinesInStock());
 
 		// The total Number of passengers of all the machines in stock(for info)
-		System.out.println("\nIn total number of passengers for all the machines in stock: "
-				+ source.totalNumberOfPassengersOfAllMachines());
+		System.out.println("\nTotal number of passengers for all the machines in stock: " + source.totalPassengers());
+		
+		// The total carrying of all the machines in stock(for info)
+		System.out.println("\nTotal carrying for all the machines in stock: " + source.totalCarrying());
 
 		// Requests to the quantity machines for Airline
 		System.out.println("-----------------------------------------");
-		System.out.println("How many machines are need? ");
+		System.out.println("How many machines are needed? ");
 		long quantityNeedMachines = LogicProcessor.testInt();
 		source.getQuantityNeedMachines(quantityNeedMachines);
 
@@ -36,20 +37,9 @@ public class Main {
 		// Get the list of machines for Airline
 		System.out.println("*******************************************");
 		List<Aviations> listMachines = source.getMachinesForAirline(quantityNeedMachines, money);
-		try {
-			if (listMachines.size() != 0) {
-				System.out.println(new Airline(listMachines).getNameAirline() + ":\n");
-				for (Aviations machines : listMachines) {
-					System.out.println("The " + machines + " was added in Airline: ");
-				}
-				System.out.println("*******************************************");
-
-				System.out.println(
-						"The cheapest  machines in your Airline is : " + source.getMinCostElement(listMachines));
-			}
-		} catch (NullPointerException e) {
-			e.getMessage();
-		}
+		
+		System.out.println("*******************************************");
+		System.out.println("The cheapest  machines in your Airline is : " + source.getMinCostElement(listMachines));
 	}
 
 }

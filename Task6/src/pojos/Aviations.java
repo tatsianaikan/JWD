@@ -3,7 +3,7 @@ package pojos;
 public class Aviations{
 	protected String aircraftName;
 	protected int numberOfPassengers;
-	protected int ranging; //äàëüíîñòü ïîëåòà	
+	protected int carrying; //ãğóçîïîäúåìíîñòü	
 	protected String type;
 	protected int cost; //aircraft cost
 		
@@ -13,10 +13,10 @@ public class Aviations{
         this.aircraftName = aircraftName;
     }
 	
-	public Aviations(String aircraftName, int numberOfPassengers, int ranging, int cost){
+	public Aviations(String aircraftName, int numberOfPassengers, int carrying, int cost){
 		this.aircraftName = aircraftName;
 		this.numberOfPassengers = numberOfPassengers;
-		this.ranging = ranging;
+		this.carrying = carrying;
 		this.cost = cost;
 	}
 	
@@ -34,11 +34,11 @@ public class Aviations{
 		return numberOfPassengers;
 	}
 	
-	public void setRanging(int ranging){
-		this.ranging = ranging;
+	public void setÑarrying(int carrying){
+		this.carrying = carrying;
 	}	
-	public int getRanging(){
-		return ranging;
+	public int getÑarrying(){
+		return carrying;
 	}
 	
 	
@@ -67,7 +67,7 @@ public class Aviations{
 		result = prime * result + ((aircraftName == null) ? 0 : aircraftName.hashCode());
 		result = prime * result + cost;
 		result = prime * result + numberOfPassengers;
-		result = prime * result + ranging;
+		result = prime * result + carrying;
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -90,7 +90,7 @@ public class Aviations{
 			return false;
 		if (numberOfPassengers != other.numberOfPassengers)
 			return false;
-		if (ranging != other.ranging)
+		if (carrying != other.carrying)
 			return false;
 		if (type == null) {
 			if (other.type != null)
@@ -104,7 +104,7 @@ public class Aviations{
 	@Override
 	public String toString() {
 		return aircraftName + "," + numberOfPassengers + ","
-				+ ranging + "," + type + "," + cost;
+				+ carrying + "," + type + "," + cost;
 	}
 	
 	

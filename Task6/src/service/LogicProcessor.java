@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import pojos.Airline;
 import pojos.Aviations;
 import data.FileDataAviations;
 import data.ListDataAviations;
@@ -52,6 +53,17 @@ public class LogicProcessor {
 				return null;
 			}
 		}
+		
+		try {
+			if (mashinesForAirline.size() != 0) {
+				System.out.println(new Airline(mashinesForAirline).getNameAirline() + ":\n");
+				for (Aviations machines : mashinesForAirline) {
+					System.out.println("The " + machines + " was added in Airline: ");
+				}				
+			}
+		} catch (NullPointerException e) {
+			e.getMessage();
+		}
         
 		writeDataFile(mashinesForAirline);
 		
@@ -97,7 +109,7 @@ public class LogicProcessor {
     }
         
     // The total Number of passengers of all the machines in stock
-    public int totalNumberOfPassengersOfAllMachines(){
+    public int totalPassengers(){
     	int number = 0; 
 		for(Aviations mashine:listOfAviations){
 			number = number+ mashine.getNumberOfPassengers();
@@ -105,6 +117,15 @@ public class LogicProcessor {
 		return number;
 	}
      
+    // The total carrying of all the machines in stock
+    public int totalCarrying(){
+    	int carrying = 0; 
+		for(Aviations mashine:listOfAviations){
+			carrying = carrying+ mashine.get—arrying();
+		}
+		return carrying;
+	}
+    
     // Get Quantity needed machines from the stock
     public long getQuantityNeedMachines(long quantityNeedMachines){	
 	    boolean flag;

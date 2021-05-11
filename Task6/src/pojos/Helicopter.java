@@ -9,12 +9,12 @@ public class Helicopter extends Aviations {
 		super();
 	}
 
-	public Helicopter(String aircraftName, int numberOfPassengers, int ranging, int cost){
-		super(aircraftName, numberOfPassengers, ranging, cost);
+	public Helicopter(String aircraftName, int numberOfPassengers, int carrying, int cost){
+		super(aircraftName, numberOfPassengers, carrying, cost);
 	}
 	
-	public Helicopter(String aircraftName, int numberOfPassengers, int ranging, HelicopterType groupType, int cost){
-		super(aircraftName, numberOfPassengers, ranging, cost);
+	public Helicopter(String aircraftName, int numberOfPassengers, int carrying, HelicopterType groupType, int cost){
+		super(aircraftName, numberOfPassengers, carrying, cost);
 		this.groupType = groupType;
 	}
 	
@@ -50,7 +50,7 @@ public class Helicopter extends Aviations {
 
 	@Override
 	public String toString() {
-		return aircraftName + " " + numberOfPassengers + " " + ranging + " " +  groupType + " " +  cost; 
+		return aircraftName + " " + numberOfPassengers + " " + carrying + " " +  groupType + " " +  cost; 
 	}
 	
 	

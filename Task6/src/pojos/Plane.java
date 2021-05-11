@@ -9,12 +9,12 @@ public class Plane extends Aviations{
 		super();
 	}
 
-	public Plane(String aircraftName, int numberOfPassengers, int ranging, int cost){
-		super(aircraftName, numberOfPassengers, ranging, cost);
+	public Plane(String aircraftName, int numberOfPassengers, int carrying, int cost){
+		super(aircraftName, numberOfPassengers, carrying, cost);
 	}
 	
-	public Plane(String aircraftName, int numberOfPassengers, int ranging, PlaneType groupType, int cost){
-		super(aircraftName, numberOfPassengers, ranging, cost);
+	public Plane(String aircraftName, int numberOfPassengers, int carrying, PlaneType groupType, int cost){
+		super(aircraftName, numberOfPassengers, carrying, cost);
 		this.groupType = groupType;
 	}
 	
@@ -50,7 +50,7 @@ public class Plane extends Aviations{
 
 	@Override
 	public String toString(){
-		return aircraftName + " " + numberOfPassengers + " " + ranging + " " +  groupType + " " +  cost; 
+		return aircraftName + " " + numberOfPassengers + " " + carrying + " " +  groupType + " " +  cost; 
 	}
 
 }

@@ -27,7 +27,7 @@ public class FileDataAviations extends AbstractDataSourse{
                       Aviations machine = new Aviations();
                       machine.setAircraftName(str[0]);
                       machine.setNumberOfPassengers(Integer.parseInt(str[1]));
-                      machine.setRanging(Integer.parseInt(str[2]));
+                      machine.set—arrying(Integer.parseInt(str[2]));
                       machine.setType(str[3]);
                       machine.setCost(Integer.parseInt(str[4]));
                       machines.add(machine);
